@@ -1,45 +1,18 @@
-# StarkNet.js + React
+# Frontend experiment
 
-This repo shows how to connect your React app to StarkNet.
+- Forked from `starknet-react-example`; see License below.
+- Rendering content retrieved directly from starknet contracts.
+- Moving towards Jacob's vision at https://twitter.com/js_horne/status/1491791585276616705
 
-## Content
+## Note
+```
+nvm install --lts
+nvm use --lts
+```
 
-### Contracts
-
-The `contracts` directory contains a simple Cairo contract:
-
- * `incrementCounter(amount)`: increment the counter by the given amount.
- * `counter()`: returns the current counter value.
-
-The contract is deployed at [`0x036486801b8f42e950824cba55b2df8cccb0af2497992f807a7e1d9abd2c6ba1`](https://goerli.voyager.online/contract/0x036486801b8f42e950824cba55b2df8cccb0af2497992f807a7e1d9abd2c6ba1)
-on StarkNet alpha 4.
-
-### React
-
-The `src/providers` directory contains two React providers:
-
- * `BlockNumberProvider`: returns the current StarkNet block number. 
-    - `useBlockNumber`: returns the current block number. Returns `undefined` before
-        loading the block number for the first time.
- * `TransactionsProvider`: contains a list of transactions sent to StarkNet.
-    The state of this provider is reset between page reloads, for a production
-    app you may want to store its state to local storage.
-    - `useTransactions`: returns a list of all transactions.
-    - `useTransaction(hash)`: returns the transaction with the given hash, or `undefined` if
-        no transaction matches.
-
-The `src/lib/hooks.ts` file contains the following hooks:
-
- * `useStarknetCall(contract, method, args)`: calls the specified method on the contract with the
-    given arguments. Returns the raw call output (either a string, an array of strings, or `undefined`).
- * `useStarknetInvoke(contract, method)`: returns an `invoke(args)` function to invoke the specified
-    method with the given arguments. Also returns an `hash` that is set to the hash of the most
-    recent `invoke`.
-
-The `src/lib/counter.ts` file shows how to load a Cairo contract using a React hook.
-
-The `src/App.tsx` file shows how to use the hooks and providers to interact with the on-chain
-counter contract.
+## Contracts
+- animated svg contract at [0x04734f589e1a9c60cbccaa79bad157b7cb1704264990faa0f06ca2e3ebe2c45b](https://goerli.voyager.online/contract/0x04734f589e1a9c60cbccaa79bad157b7cb1704264990faa0f06ca2e3ebe2c45b#transactions) on starknet testnet
+- text contract to be added
 
 ## License
 
