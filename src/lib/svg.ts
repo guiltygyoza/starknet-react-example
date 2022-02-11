@@ -1,5 +1,5 @@
 import React from "react";
-import { Contract, Abi, Args, compileCalldata } from "starknet";
+import { Contract, Abi, compileCalldata } from "starknet";
 import { getSelectorFromName } from 'starknet/dist/utils/stark';
 import { useStarknet } from "../providers/StarknetProvider";
 
@@ -63,7 +63,7 @@ export function CallReturnSvgString (
       setRet(undefined)
     }
 
-  }, [contract]);
+  }, [contract, calldata, entrypointSelector]);
 
   React.useEffect(() => {
     callRetSvg();

@@ -1,32 +1,32 @@
-import React from "react";
+// import React from "react";
 import "./App.css";
 import { CallReturnSvgString, useSvgContract, svgStringToBase64 } from "./lib/svg";
 // import { useCounterContract } from "./lib/counter";
-import { useStarknetCall } from "./lib/hooks";
+// import { useStarknetCall } from "./lib/hooks";
 import {
   BlockHashProvider,
-  useBlockHash,
+  // useBlockHash,
 } from "./providers/BlockHashProvider";
 import { StarknetProvider } from "./providers/StarknetProvider";
 import {
   TransactionsProvider,
-  useTransactions,
+  // useTransactions,
 } from "./providers/TransactionsProvider";
-import { ConnectedOnly } from "./components/ConnectedOnly";
-import { IncrementCounter } from "./components/IncrementCounter";
-import { VoyagerLink } from "./components/VoyagerLink";
+// import { ConnectedOnly } from "./components/ConnectedOnly";
+// import { IncrementCounter } from "./components/IncrementCounter";
+// import { VoyagerLink } from "./components/VoyagerLink";
 
 function App() {
-  const blockNumber = useBlockHash();
+  // const blockNumber = useBlockHash();
   const svgContract = useSvgContract();
   // const counter = useStarknetCall(counterContract, "counter");
-  const svg = useStarknetCall(svgContract, "return_svg");
+  // const svg = useStarknetCall(svgContract, "return_svg");
 
   const svg_string = CallReturnSvgString(svgContract);
 
   // const lastCaller = useStarknetCall(counterContract, "lastCaller");
 
-  const { transactions } = useTransactions();
+  // const { transactions } = useTransactions();
 
   // console.log('blocknumber: ', blockNumber)
   return (
