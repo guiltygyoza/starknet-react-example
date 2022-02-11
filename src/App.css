@@ -1,10 +1,11 @@
 :root {
-  --primary-color: hsla(270, 100%, 68%, 1);
-  --primary-bg: hsla(270, 100%, 97%, 1);
-  --primary-bg-darker: hsla(270, 100%, 90%, 1);
+  --primary-color: #DDDDDD;
+  --primary-bg: #272727;
+  background: var(--primary-bg);
 }
 
 .container {
+  color: var(--primary-color);
   max-width: 800px;
   margin: 0 auto;
   padding-top: 6rem;
@@ -12,6 +13,7 @@
   align-items: center;
   justify-content: center;
   font-family: monospace;
+  font-size: 15px;
   text-align: center;
 }
 
