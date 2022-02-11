@@ -1,0 +1,25 @@
+[
+    {
+        "inputs": [],
+        "name": "return_svg",
+        "outputs": [
+            {
+                "name": "arr_len",
+                "type": "felt"
+            },
+            {
+                "name": "arr",
+                "type": "felt*"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "test_cs_concat",
+        "outputs": [],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
