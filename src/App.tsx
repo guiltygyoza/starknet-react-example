@@ -7,20 +7,7 @@ import {
 import { StarknetProvider } from "./providers/StarknetProvider";
 import { TransactionsProvider } from "./providers/TransactionsProvider";
 // import { VoyagerLink } from "./components/VoyagerLink";
-
-const rawHTML = `
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-  </ul>
-</div>`
+import Parser from 'html-react-parser';
 
 function App() {
   // const blockNumber = useBlockHash();
@@ -52,6 +39,10 @@ function App() {
 
       <div className="row">
         <img src={`data:image/svg+xml;base64,${ svgStringToBase64(svg_string) }`} alt="" />
+      </div>
+
+      <div>
+        {Parser('(more stuffs served from starknet)')}
       </div>
 
     </div>
