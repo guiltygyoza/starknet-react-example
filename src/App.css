@@ -20,3 +20,9 @@
 .row {
   padding: 0.4rem 0;
 }
+
+table { margin: auto; }
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}

@@ -1,18 +1,18 @@
 import "./App.css";
-import { CallReturnSvgString, useSvgContract, svgStringToBase64 } from "./lib/svg";
-import {
-  BlockHashProvider,
-  // useBlockHash,
-} from "./providers/BlockHashProvider";
+import { CallContractStringifyReturn, useSvgContract, useTableContract, svgStringToBase64, htmlParse } from "./lib/contracts";
+import { BlockHashProvider } from "./providers/BlockHashProvider";
 import { StarknetProvider } from "./providers/StarknetProvider";
 import { TransactionsProvider } from "./providers/TransactionsProvider";
-// import { VoyagerLink } from "./components/VoyagerLink";
-import Parser from 'html-react-parser';
 
+
+//
+// App
+//
 function App() {
-  // const blockNumber = useBlockHash();
   const svgContract = useSvgContract();
-  const svg_string = CallReturnSvgString(svgContract);
+  const tableContract = useTableContract();
+  const svg_string = CallContractStringifyReturn (svgContract, "return_svg");
+  const html_string = CallContractStringifyReturn (tableContract, "return_html_table");
 
   return (
     <div className="container">
@@ -25,30 +25,24 @@ function App() {
         where wizards stay up late.
       </div>
 
-      {/* <div className="row">
-        Current Block:{" "}
-        {blockNumber && <VoyagerLink.Block block={blockNumber} />}
-      </div>
-
       <div className="row">
-        Contract Address:{" "}
-        {svgContract?.connectedTo && (
-          <VoyagerLink.Contract contract={svgContract?.connectedTo} />
-        )}
-      </div> */}
-
-      <div className="row">
+        <a href="https://twitter.com/topology_gg" target="_blank" rel="noopener noreferrer">
         <img src={`data:image/svg+xml;base64,${ svgStringToBase64(svg_string) }`} alt="" />
+        </a>
       </div>
 
-      <div>
-        {Parser('(more stuffs served from starknet)')}
+      <div className="row">
+        { htmlParse(html_string) }
       </div>
 
     </div>
   );
 }
 
+
+//
+// Wrapper for App
+//
 function AppWithProviders() {
   return (
     <StarknetProvider>
