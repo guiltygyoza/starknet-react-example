@@ -11,14 +11,39 @@ import Parser from 'html-react-parser';
 //
 // Can we pull abi from voyager? to minimize web2 footprint
 //
+import ABI_PARAGRAPH from "./abi/paragraph_abi.json"
 import ABI_SVG from "./abi/svg_abi.json";
 import ABI_TABLE from "./abi/table_abi.json"
 
 //
 // Contract address
 //
+const ADDRESS_PARAGRAPH = "0x05f90f60cb8de3c965623d93cd6a0bc5d2a2e8a8d2cc13976748b5f9eeb5f16e";
 const ADDRESS_SVG = "0x00e48875583bacfa05bb868d3d7c55d21ff9ac85e6b4a977a591eaeee1938bb5";
 const ADDRESS_TABLE = "0x0570b6aae6e81f04e078474b462b8eeff457fdb47311ce943a787339f5bc06aa";
+
+
+// Helpful references for svg animation
+// 1. https://stackoverflow.com/questions/41814711/svg-animate-in-reverse-once-complete
+// 2. https://css-tricks.com/svg-shape-morphing-works/
+
+
+//
+// Function to set the html paragraph contract
+//
+export function useParagraphContract(): Contract | undefined {
+
+  const { library } = useStarknet();
+  const [contract, setContract] = React.useState<Contract | undefined>(
+    undefined
+  );
+
+  React.useEffect(() => {
+    setContract(new Contract(ABI_PARAGRAPH as Abi[], ADDRESS_PARAGRAPH, library));
+  }, [library]);
+
+  return contract;
+}
 
 //
 // Function to set the svg contract
