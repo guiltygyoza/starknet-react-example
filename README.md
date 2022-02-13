@@ -11,8 +11,9 @@ nvm use --lts
 ```
 
 ## Contracts
-- animated svg contract at [0x04734f589e1a9c60cbccaa79bad157b7cb1704264990faa0f06ca2e3ebe2c45b](https://goerli.voyager.online/contract/0x04734f589e1a9c60cbccaa79bad157b7cb1704264990faa0f06ca2e3ebe2c45b#transactions) on starknet testnet
-- text contract to be added
+- paragraph contract at [0x05f90f60cb8de3c965623d93cd6a0bc5d2a2e8a8d2cc13976748b5f9eeb5f16e](https://goerli.voyager.online/contract/0x05f90f60cb8de3c965623d93cd6a0bc5d2a2e8a8d2cc13976748b5f9eeb5f16e) on starknet testnet
+- animated svg contract at [0x00e48875583bacfa05bb868d3d7c55d21ff9ac85e6b4a977a591eaeee1938bb5](https://goerli.voyager.online/contract/0x00e48875583bacfa05bb868d3d7c55d21ff9ac85e6b4a977a591eaeee1938bb5) on starknet testnet
+- project table contract at [0x0570b6aae6e81f04e078474b462b8eeff457fdb47311ce943a787339f5bc06aa](https://goerli.voyager.online/contract/0x0570b6aae6e81f04e078474b462b8eeff457fdb47311ce943a787339f5bc06aa) on starknet testnet
 
 ## License
 
