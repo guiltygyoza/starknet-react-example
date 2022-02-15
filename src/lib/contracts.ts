@@ -82,7 +82,7 @@ export function useTableContract(): Contract | undefined {
 //
 // Function to retrieve svg from contract
 //
-export function callContractStringifyReturn (
+export function CallContractStringifyReturn (
   contract: Contract | undefined,
   method: string
 ): string | undefined {

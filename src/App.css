@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #DDDDDD;
-  --primary-bg: #272727;
+  --primary-color: #333333;
+  --primary-bg: #F5F5DC;
   background: var(--primary-bg);
 }
 
