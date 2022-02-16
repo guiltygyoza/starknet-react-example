@@ -16,7 +16,7 @@ import ABI from "./abi/web_abi.json"
 //
 // Contract address
 //
-const ADDRESS = "0x04ffa0a2b789fb6a454c0f2b13120ad9bc8418728040964a63910d71a710cd79";
+const ADDRESS = "0x0706e936bb7eeae561485d280d3b5663fa12617208b04ebc232ffcbf770508c9";
 
 
 // Helpful references for svg animation
