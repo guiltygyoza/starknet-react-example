@@ -11,16 +11,12 @@ import Parser from 'html-react-parser';
 //
 // Can we pull abi from voyager? to minimize web2 footprint
 //
-import ABI_PARAGRAPH from "./abi/paragraph_abi.json"
-import ABI_SVG from "./abi/svg_abi.json";
-import ABI_TABLE from "./abi/table_abi.json"
+import ABI from "./abi/web_abi.json"
 
 //
 // Contract address
 //
-const ADDRESS_PARAGRAPH = "0x05f90f60cb8de3c965623d93cd6a0bc5d2a2e8a8d2cc13976748b5f9eeb5f16e";
-const ADDRESS_SVG = "0x0026937d8d296698399a4c8305c4102812b282994e1049d95d02baea4df4cfc4";
-const ADDRESS_TABLE = "0x0570b6aae6e81f04e078474b462b8eeff457fdb47311ce943a787339f5bc06aa";
+const ADDRESS = "0x04ffa0a2b789fb6a454c0f2b13120ad9bc8418728040964a63910d71a710cd79";
 
 
 // Helpful references for svg animation
@@ -29,9 +25,9 @@ const ADDRESS_TABLE = "0x0570b6aae6e81f04e078474b462b8eeff457fdb47311ce943a78733
 
 
 //
-// Function to set the html paragraph contract
+// Function to set the contract
 //
-export function useParagraphContract(): Contract | undefined {
+export function useContract(): Contract | undefined {
 
   const { library } = useStarknet();
   const [contract, setContract] = React.useState<Contract | undefined>(
@@ -39,48 +35,15 @@ export function useParagraphContract(): Contract | undefined {
   );
 
   React.useEffect(() => {
-    setContract(new Contract(ABI_PARAGRAPH as Abi[], ADDRESS_PARAGRAPH, library));
+    setContract(new Contract(ABI as Abi[], ADDRESS, library));
   }, [library]);
 
   return contract;
 }
 
-//
-// Function to set the svg contract
-//
-export function useSvgContract(): Contract | undefined {
-
-  const { library } = useStarknet();
-  const [contract, setContract] = React.useState<Contract | undefined>(
-    undefined
-  );
-
-  React.useEffect(() => {
-    setContract(new Contract(ABI_SVG as Abi[], ADDRESS_SVG, library));
-  }, [library]);
-
-  return contract;
-}
 
 //
-// Function to set the html table contract
-//
-export function useTableContract(): Contract | undefined {
-
-  const { library } = useStarknet();
-  const [contract, setContract] = React.useState<Contract | undefined>(
-    undefined
-  );
-
-  React.useEffect(() => {
-    setContract(new Contract(ABI_TABLE as Abi[], ADDRESS_TABLE, library));
-  }, [library]);
-
-  return contract;
-}
-
-//
-// Function to retrieve svg from contract
+// Function to retrieve felt array from contract and stringify
 //
 export function CallContractStringifyReturn (
   contract: Contract | undefined,
@@ -92,7 +55,7 @@ export function CallContractStringifyReturn (
   const entrypointSelector = getSelectorFromName(method)
   const calldata = compileCalldata({})
 
-  const callRetSvg = React.useCallback(async () => {
+  const callRet = React.useCallback(async () => {
     if (contract && contract.connectedTo) {
 
       contract.provider
@@ -120,8 +83,8 @@ export function CallContractStringifyReturn (
   }, [contract, calldata, entrypointSelector]);
 
   React.useEffect(() => {
-    callRetSvg();
-  }, [callRetSvg]);
+    callRet();
+  }, [callRet]);
 
 
   return ret;

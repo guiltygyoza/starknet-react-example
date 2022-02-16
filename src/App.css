@@ -21,6 +21,11 @@
   padding: 0.4rem 0;
 }
 
+.footnote {
+  font-size: 10px;
+  margin-top: 30px;
+}
+
 table { margin: auto; }
 
 a, a:visited, a:hover, a:active {

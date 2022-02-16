@@ -1,9 +1,7 @@
 import "./App.css";
 import {
   CallContractStringifyReturn,
-  useParagraphContract,
-  useSvgContract,
-  useTableContract,
+  useContract,
   svgStringToBase64,
   htmlParse } from "./lib/contracts";
 import { BlockHashProvider } from "./providers/BlockHashProvider";
@@ -15,12 +13,10 @@ import { TransactionsProvider } from "./providers/TransactionsProvider";
 // App
 //
 function App() {
-  const paragraphContract = useParagraphContract();
-  const svgContract = useSvgContract();
-  const tableContract = useTableContract();
-  const paragraph_string = CallContractStringifyReturn (paragraphContract, "return_html_paragraphs")
-  const svg_string = CallContractStringifyReturn (svgContract, "return_svg");
-  const html_string = CallContractStringifyReturn (tableContract, "return_html_table");
+  const contract = useContract();
+  const paragraph_string = CallContractStringifyReturn (contract, "return_html_paragraphs")
+  const svg_string = CallContractStringifyReturn (contract, "return_svg");
+  const html_string = CallContractStringifyReturn (contract, "return_html_table");
 
   return (
     <div className="container">
@@ -40,6 +36,13 @@ function App() {
       {/* table pulled from starknet */}
       <div className="row">
         { htmlParse(html_string) }
+      </div>
+
+      <div className="row footnote">
+        <p>Website contract address:</p>
+        <p>
+        <a href="https://goerli.voyager.online/contract/0x04ffa0a2b789fb6a454c0f2b13120ad9bc8418728040964a63910d71a710cd79" target="_blank" rel="noopener noreferrer">0x04ffa0a2b789fb6a454c0f2b13120ad9bc8418728040964a63910d71a710cd79</a>
+        </p>
       </div>
 
     </div>
