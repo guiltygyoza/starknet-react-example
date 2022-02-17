@@ -16,12 +16,15 @@ import ABI from "./abi/web_abi.json"
 //
 // Contract address
 //
-const ADDRESS = "0x0706e936bb7eeae561485d280d3b5663fa12617208b04ebc232ffcbf770508c9";
+const ADDRESS = "0x060b3481d3cfdc5a76193f25a403ddeda902c39547bfe25cf0151b66f6201086";
 
 
 // Helpful references for svg animation
 // 1. https://stackoverflow.com/questions/41814711/svg-animate-in-reverse-once-complete
 // 2. https://css-tricks.com/svg-shape-morphing-works/
+// 3. https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/keyTimes
+// note: animation tag using to & from and id-based looping, sandwiched by polygon tag, does not work for safari / ios browser;
+//       switching to values (semicolon-separated values) and keytimes.
 
 
 //
