@@ -41,7 +41,7 @@ function App() {
       <div className="row footnote">
         <p>Website contract address:</p>
         <p>
-        <a href="https://goerli.voyager.online/contract/0x060b3481d3cfdc5a76193f25a403ddeda902c39547bfe25cf0151b66f6201086#readContract" target="_blank" rel="noopener noreferrer">0x060b3481d3cfdc5a76193f25a403ddeda902c39547bfe25cf0151b66f6201086</a>
+        <a href="https://goerli.voyager.online/contract/0x060b3481d3cfdc5a76193f25a403ddeda902c39547bfe25cf0151b66f6201086#readContract" target="_blank" rel="noopener noreferrer">0x060b3481d3cfdc5a7...25cf0151b66f6201086</a>
         </p>
       </div>
 
